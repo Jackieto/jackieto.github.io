@@ -6,7 +6,10 @@ import { fileURLToPath } from 'node:url'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
-  alias: {
-    '@': fileURLToPath(new URL('./src', import.meta.url))
+  base: '/chords',
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   }
 })
